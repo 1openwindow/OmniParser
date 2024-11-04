@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 import io
 import json
 from rich import print
-import pyautogui
 
 # 2. Configuration
 
@@ -64,10 +63,3 @@ dino_labeled_img, label_coordinates, parsed_content_list = get_som_labeled_img(
 decoded_image = Image.open(io.BytesIO(base64.b64decode(dino_labeled_img)))
 decoded_image.save("labeled_image_output.png")
 print(parsed_content_list)
-
-
-if label_coordinates:
-    first_icon_box = label_coordinates[0]
-    x_center = (first_icon_box[0] + first_icon_box[2]) / 2
-    y_center = (first_icon_box[1] + first_icon_box[3]) / 2
-    pyautogui.click(x_center, y_center)
