@@ -10,6 +10,13 @@
             "request": "launch",
             "program": "${workspaceFolder}/run_with_xvfb.sh",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Debug Client",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/client.py",
+            "console": "integratedTerminal"
         }
     ]
 }

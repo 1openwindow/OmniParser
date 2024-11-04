@@ -2,14 +2,23 @@ import requests
 import base64
 from PIL import ImageGrab
 import io
+import pygetwindow as gw
 
-# Capture the screenshot
-screenshot = ImageGrab.grab()
+# Get the active window
+active_window = gw.getActiveWindow()
+
+# Capture the screenshot of the active window
+screenshot = ImageGrab.grab(bbox=active_window.box)
 buffered = io.BytesIO()
 screenshot.save(buffered, format="PNG")
+
+# Open the screenshot
+screenshot.show()
+
+# Encode the screenshot to base64
 img_str = base64.b64encode(buffered.getvalue()).decode('utf-8')
 
-url = 'http://localhost:5000/check_ocr_box'
+url = 'https://ngrok.endpoint/check_ocr_box'
 data = {
     'image': img_str
 }
