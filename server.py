@@ -24,5 +24,6 @@ def check_ocr_box_api():
     text, ocr_bbox = ocr_bbox_rslt
     return jsonify({'text': text, 'ocr_bbox': ocr_bbox, 'is_goal_filtered': is_goal_filtered})
 
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='127.0.0.1', port=5000, debug=True)
