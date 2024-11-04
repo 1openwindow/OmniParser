@@ -4,3 +4,4 @@ weights/icon_detect/
 .gradio
 __pycache__/
 util/__pycache__/
+temp_image.png
