@@ -193,7 +193,7 @@ def valid_params(user_input, state):
     for server_name, url in [('Windows Host', 'localhost:5000'), ('OmniParser Server', args.omniparser_server_url)]:
         try:
             url = f'http://{url}/probe'
-            response = requests.get(url, timeout=3)
+            response = requests.get(url, timeout=10)
             if response.status_code != 200:
                 errors.append(f"{server_name} is not responding")
         except RequestException as e:
